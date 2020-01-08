@@ -36,8 +36,8 @@ export default function App() {
           <Text style={styles.memoDate}>2020/01/06</Text>
         </View>
 
-        <View>
-          <Text>+</Text>
+        <View style={styles.memoAddButton}>
+          <Text style={styles.memoAddButtonTitle}>+</Text>
         </View>
       </View>
     </View>
@@ -52,6 +52,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 78,
   },
+  memoAddButton: {
+    position: 'absolute',
+    bottom: 32,
+    right: 32,
+    width: 48,
+    height: 48,
+    backgroundColor: '#E31675',
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  memoAddButtonTitle: {
+    fontSize: 32,
+    lineHeight: 32,
+    color: '#fff',
+  },
   memoList: {
     width: '100%',
     flex: 1,
@@ -61,6 +77,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     backgroundColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   memoTitle: {
     fontSize: 18,
