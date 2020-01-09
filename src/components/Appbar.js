@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 
 class Appbar extends React.Component {
   render() {
-    return(
+    return (
       <View style={styles.appbar}>
         <View>
           <Text style={styles.appbarTitle}>MEMOT</Text>
