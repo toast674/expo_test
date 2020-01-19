@@ -8,7 +8,7 @@ class MemoListScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <MemoList />
+        <MemoList navigation={this.props.navigation} />
         <CircleButton name="plus" />
       </View>
     );
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
+    backgroundColor: '#FFFDF6',
   },
 });
 
