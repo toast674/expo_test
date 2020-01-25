@@ -38,7 +38,8 @@ class CircleButton extends React.Component {
 
     return (
       //  72.なぜかstyleを上書きするとcirclebuttonが反映されない
-      <TouchableHighlight style={[styles.container, style]} underlayColor="transparent">
+      //  TouchableHighlight(なぜか小文字)をcontainerと逆にしたら画像だけ消えた 要改善
+      <TouchableHighlight style={[styles.container, style]}>
         <View style={[styles.circleButton, { backgroundColor: bgColor }]}>
           {
             this.state.fontLoaded ? (
@@ -53,13 +54,15 @@ class CircleButton extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
     bottom: 32,
     right: 32,
     width: 48,
     height: 48,
   },
   circleButton: {
+    position: 'absolute',
+    bottom: 32,
+    right: 32,
     width: 48,
     height: 48,
     borderRadius: 24,
