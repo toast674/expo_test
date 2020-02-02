@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
+import CircleButton from '../elements/CircleButton';
 
 class MemoList extends React.Component {
   render() {

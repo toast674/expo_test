@@ -5,7 +5,6 @@ import { createIconSet } from '@expo/vector-icons';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
 
-
 const CustomIcon = createIconSet({
   pencil: '\uf303',
   plus: '\uf067',
@@ -26,7 +25,7 @@ class CircleButton extends React.Component {
   }
 
   render() {
-    const { style, color, name } = this.props;
+    const { style, color, name, onPress } = this.props;
 
     let bgColor = '#E31675';
     let textColor = '#fff';
@@ -39,26 +38,21 @@ class CircleButton extends React.Component {
     return (
       //  72.なぜかstyleを上書きするとcirclebuttonが反映されない
       //  TouchableHighlight(なぜか小文字)をcontainerと逆にしたら画像だけ消えた 要改善
-      <TouchableHighlight style={[styles.container, style]}>
-        <View style={[styles.circleButton, { backgroundColor: bgColor }]}>
+      //  三項演算子部分が原因？
+      <View style={[styles.circleButton, style, { backgroundColor: bgColor }]}>
+        <TouchableHighlight onPress={onPress}>
           {
             this.state.fontLoaded ? (
-              <CustomIcon name={name} style={[styles.circleButtonTitle, { color: textColor }]} />
+              <CustomIcon name={name} style={[styles.circleButtonTitle, style, { color: textColor }]} />
             ) : null
           }
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    bottom: 32,
-    right: 32,
-    width: 48,
-    height: 48,
-  },
   circleButton: {
     position: 'absolute',
     bottom: 32,
